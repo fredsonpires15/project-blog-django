@@ -1,4 +1,4 @@
 # Blog
 
-Este é o blog criado por Fredson Vila Nova
+Este é um blog criado por Fredson Vila Nova
 
