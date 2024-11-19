@@ -1,6 +1,6 @@
 Django>=5.1.2, <5.2  
 # se der algum problema mude para Django>=4.2.1, <4.3
-asgiref==3.5.2
+asgiref>=3.8.1
 psycopg2-binary>=2.9.6, <2.10 
 sqlparse==0.4.3
 tzdata==2022.7
