@@ -5,9 +5,18 @@
 </head>
     
 <body>
-    {% include "blog/partials/_header.html" %}
-    {% block content %} {% endblock content %}
-    {% include "blog/partials/_pagination.html" %}
-    {% include "blog/partials/_footer.html" %}  
+    <div class="blog-wrapper">
+        
+        {% include "blog/partials/_header.html" %}
+
+        {% block content %} {% endblock content %}
+
+        {% include "blog/partials/_pagination.html" %}
+
+        {% include "blog/partials/_footer.html" %} 
+
+        <!-- {% include "blog/partials/_temp.html" %} -->
+
+    </div>
 </body>
 </html>
