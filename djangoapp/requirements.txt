@@ -6,3 +6,4 @@ sqlparse==0.4.3
 tzdata==2022.7
 whitenoise==6.2.0 
 pillow>=11.0.0,<11.1 
+django-summernote>=0.8.20.0, <0.8.21

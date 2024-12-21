@@ -1,29 +1,31 @@
     <article class="card">
-        <div class="card-cover-wrapper">
-            <a href="#">
-                <img 
-                class="card-cover"
-                loading="lazy"
-                src="https://picsum.photos/745/419/?rand=2{{ i }}" 
-                alt="Change me">
-            </a>
+        {% if post.cover %}
+            <div class="card-cover-wrapper">
+                <a href="{{ post.get_absolute_url }}">
+                    <img 
+                    class="card-cover"
+                    loading="lazy"
+                    src="{{ post.cover.url }}" 
+                    alt="Cover do poste {{ post.title }}">
+                </a>
 
-        </div>
+            </div>
+        {% endif %}
 
         <div class=" card-text-wrapper"> 
             <div class="card-title-wrapper">
                 <h2 class="card-title">
-                    <a href="#" class="card-title-link">
-                    Titulo de texto _post-card.
+                    <a href="{{ post.get_absolute_url }}" class="card-title-link">
+                        {{ post.title }}
             </div>
 
             <div class=" card-content-wrapper">
                 <p class="card-content">
-                    Exemplo de conteúdo atualizado para o cartão de postagem na _post-card.
+                    {{ post.execerpt }}
                 </p>
 
                 <div class="card-actions">
-                    <a href="#" class="card-action-link">
+                    <a href="{{ post.get_absolute_url }}" class="card-action-link">
                         <span>Leia mais</span>
                         <i class="fa-solid fa-circle-arrow-right"></i>
                     </a>
