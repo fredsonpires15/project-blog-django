@@ -74,7 +74,13 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
-    
+
+class PostManager(models.Manager):  # Usar pots manager para evitar repetição do codigo
+    def get_published(self):
+        return self\
+            .filter(is_published=True)\
+            .order_by('-id')
+
 # criar paginas de posts 
 class Page(models.Model):
     title = models.CharField(max_length=100)
@@ -83,11 +89,19 @@ class Page(models.Model):
         blank=True, null=False,
         max_length=200
     )
+
+    objectos = PostManager()
+
     content = models.TextField()
     is_published = models.BooleanField(
         default=False,
         help_text="Este campo precisa ser marcado para que o página seja publicada.",
     )
+
+    def get_absolute_url(self): # retorna a url do post
+        if not self.is_published:
+            return reverse('blog:index')
+        return reverse('blog:page', args=(self.slug,))
 
     def save(self, *args, **kwargs): # Salva o slug
         if not self.slug:
@@ -98,11 +112,7 @@ class Page(models.Model):
         return self.title
 
 
-class PostManager(models.Manager):  # Usar pots manager para evitar repetição do codigo
-    def get_published(self):
-        return self\
-            .filter(is_published=True)\
-            .order_by('-id')
+
     
 
 class Post(models.Model):

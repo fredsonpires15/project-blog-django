@@ -25,7 +25,18 @@
                 </p>
 
                 <div class="card-actions">
+                    {% if post.category %}  
+                        <a 
+                            class="post-meta-link" 
+                            href="{% url "blog:category" post.category.slug %}">
+                            <span>
+                                <strong>{{post.category.name}}</strong>
+                            </span>
+                        </a>
+                    {% endif %}
+
                     <a href="{{ post.get_absolute_url }}" class="card-action-link">
+                        
                         <span>Leia mais</span>
                         <i class="fa-solid fa-circle-arrow-right"></i>
                     </a>

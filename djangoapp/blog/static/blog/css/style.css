@@ -141,6 +141,16 @@ input[type='search']::-webkit-search-results-decoration {
   -webkit-appearance: none;
 } 
 
+img{
+  margin: 0 auto;
+}
+
+/* CodeMirror */
+.CodeMirror {
+  height: auto !important;
+  font-size: var(--fs-smlr) !important;
+}
+
 /* Blog*/
 
 body, html, .blog-wrapper {
@@ -181,6 +191,10 @@ main-content {
 /* Utilities */
 .pb-base {
   padding-bottom: var(--spacing-base);
+}
+
+.mt-base {
+  margin-top: var(--spacing-base);
 }
 
 .center {
@@ -292,8 +306,8 @@ main-content {
 
 /* Footer */
 .footer {
-  background: hsl(var(--clr-gray-dk));
-  color: #00021c;
+  background: linear-gradient(to bottom, #151628, #0e0e16);
+  color: floralwhite;
 }
 
 .footer a {
